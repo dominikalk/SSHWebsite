@@ -1,4 +1,4 @@
-#SSH Website
+# SSH Website
 
 This is a static, vanilla website that uses HTML and CSS and was made for University as part of a course work.
 It details the general information, usage and history of SSH: the topic I chose as I wised to learn more about the topic itself.
