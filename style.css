@@ -1,19 +1,28 @@
+:root {
+    --wrapper-width: 960px;
+    --primary-color: #00fb05;
+    --background-color: #1e1e1e;
+    --font-family-mono: "Courier New", monospace;
+}
+
 body {
     margin: 0;
+    background-color: var(--background-color);
 }
 
 header {
-    background-color: black;
-    padding: 1rem 0;
+    background-color: var(--background-color);
+    padding: 0.7rem 0 0.5rem 0;
+    border-bottom: var(--primary-color) 2px solid;
 }
 
 .nav-title {
     margin: 0;
-    color: white;
+    color: var(--primary-color);
 }
 
 .nav-wrapper {
-    max-width: 980px;
+    max-width: var(--wrapper-width);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,16 +33,26 @@ header {
 nav {
     display: flex;
     align-items: center;
+    padding-bottom: 0.2rem;
 }
 
 .nav-link {
-    color: white;
     text-decoration: none;
     margin-left: 1rem;
+}
+
+.nav-link-selected {
+    border-bottom: var(--primary-color) 1px solid;
+    margin-bottom: -1px;
 }
 
 main {
     margin: 0 auto;
     padding: 0 2rem;
-    max-width: 980px;
+    max-width: var(--wrapper-width);
+}
+
+h1, h2, h3, h4, h5, h6, p, td, th, a {
+    color: var(--primary-color);
+    font-family: var(--font-family-mono);
 }
