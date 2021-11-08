@@ -3,6 +3,11 @@
     --primary-color: #00fb05;
     --background-color: #1e1e1e;
     --font-family-mono: "Courier New", monospace;
+    --wrapper-padding: 0 2rem;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
@@ -12,8 +17,12 @@ body {
 
 header {
     background-color: var(--background-color);
-    padding: 0.7rem 0 0.5rem 0;
-    border-bottom: var(--primary-color) 2px solid;
+    min-height: 60px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-icon {
+    margin-bottom: -5px;
 }
 
 .nav-title {
@@ -22,12 +31,14 @@ header {
 }
 
 .nav-wrapper {
-    max-width: var(--wrapper-width);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: var(--wrapper-padding);
+    min-height: 60px;
+    max-width: var(--wrapper-width);
 }
 
 nav {
@@ -42,17 +53,49 @@ nav {
 }
 
 .nav-link-selected {
-    border-bottom: var(--primary-color) 1px solid;
+    border-bottom: 1px solid var(--primary-color);
     margin-bottom: -1px;
 }
 
 main {
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: var(--wrapper-padding);
     max-width: var(--wrapper-width);
 }
 
 h1, h2, h3, h4, h5, h6, p, td, th, a {
     color: var(--primary-color);
     font-family: var(--font-family-mono);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.div-border {
+    border: 2px solid var(--primary-color);
+    -moz-box-shadow: inset 0 0 16px 10px var(--background-color);
+    -webkit-box-shadow: inset 0 0 16px 10px var(--background-color);
+    -o-box-shadow: inset 0 0 16px 10px var(--background-color);
+    box-shadow: inset 0 0 16px 10px var(--background-color);
+}
+
+.image-border { 
+    position: relative;
+    z-index: -2;
+}
+
+footer {
+    border-top: 2px solid var(--primary-color);
+    margin-top: 3rem;
+}
+
+.footer-wrapper {
+    max-width: var(--wrapper-width);
+    margin: 0 auto;
+    padding: var(--wrapper-padding);
+}
+
+.code::before {
+    content: '> ';
 }
