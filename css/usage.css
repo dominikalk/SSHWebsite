@@ -1,0 +1,15 @@
+@import "./style.css";
+
+.code-snippet {
+    background-color: var(--snippet-background-color);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 1rem;
+}
+
+.code-snippet > p {
+    margin: 0.2rem 0;
+}
+
+.code-snippet > p::before{
+    content: '> ';
+}
