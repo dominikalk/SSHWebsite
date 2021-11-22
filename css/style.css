@@ -84,6 +84,12 @@ footer {
     padding: var(--wrapper-padding);
 }
 
+.footer-wrapper > a {
+    display: block;
+    margin: 1rem 0;
+    word-wrap: break-word;
+}
+
 .code::before {
     content: '> ';
 }
