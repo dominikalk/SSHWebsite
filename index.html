@@ -31,7 +31,8 @@
                     <p class="title-word">> <b>H</b>ell</p>
                 </div>
                 <div class="info-container">
-                    <p class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="info-text">
+                        SSH, short for Secure Shell or Secure Socket Shell, is a cryptographic network protocol that that connects the SSH client to the SSH server, providing a secure channel over an unsecured network. It uses public-key cryptography to authenticate the remote computer, with the option to authenticate the user too. It also refers to the utilities that implement the protocol such as strong password authentication and public key authentication. SSH is particularly useful over the internet, an open network, as it ensures encrypted data communications between computers.                    </p>
                 </div>
                 <a href="#ssh">
                     <div class="button-container">
@@ -39,34 +40,18 @@
                         <p class="button-text">Read More</p>
                     </div>
                 </a>
-                <div class="front-page-border" ></div>
+                <div id="ssh" class="front-page-border" ></div>
             </div>
             <!-- Main Content -->
-            <h1 id="ssh" class="code">SSH</h1>
+            <h1 class="code">SSH</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-                culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur 
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-                anim id est laborum.</p>
+                SSH is typically used to access accounts on remote servers and ships by default on Unix, Linux and Mac servers. It is often used for secure remote access to resources, the remote executions of commands, managing routers, managing server hardware and with file transfer applications. One common use of SSH is to authenticate a remote user to their GitHub account when using two-factor authentication, where the user will have to generate an SSH key on their machine and link it up to their account. All SSH traffic is encrypted ensuring the users actions, who may be transferring a file or running a command, are private.            
+            </p>
 
             <h2>Telnet vs SSH</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-                culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur 
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-                anim id est laborum.</p>
+                Telnet, also known as Terminal Network, was one of the first internet application protocols, the other being FTP, and is the standard TCP/IP protocol for virtual terminal service. It is commonly regarded that SSH has replaced Telnet as Telnet has been used for terminal emulation, an action which SSH can perform, as well as the fact that SSH is more versatile and can be used for much more such as issuing commands remotely. Add the lack of security that Telnet provides and SSH is the clear winner, although Telnet can still be seen in use in some areas such as RF terminals or bar code scanners. There are some key differences between the two technologies which are laid out ahead:            
+            </p>
 
             <table>
                 <colgroup>
@@ -82,28 +67,28 @@
                 <tbody>
                     <tr>
                         <th class="table-sidebar" scope="row">Port</th>
-                        <td>23</td>
-                        <td>22</td>
+                        <td>Telnet uses port <b>23</b>, a port specifically designed for local area networks.</td>
+                        <td>SSH uses port <b>22</b> by default, allowing you the option to change it if you wish to do so.</td>
                     </tr>
                     <tr>
                         <th class="table-sidebar" scope="row">Authentication</th>
-                        <td>No</td>
-                        <td>Yes</td>
+                        <td>Telnet <b>does not provide any authentication</b> for the user.</td>
+                        <td>SSH uses <b>public-key encryption for the authentication</b> of the user as it is a more secure protocol.</td>
                     </tr>
                     <tr>
                         <th class="table-sidebar" scope="row">Security</th>
-                        <td>Bad</td>
-                        <td>Good</td>
+                        <td>Telnet transfers the data in plain text and is only suitable for <b>private networks</b> where the data is unlikely to be intercepted.</td>
+                        <td>SSH's encrypted format should be used to transfer data and uses a secure channel so it can be used over <b>public networks</b>.</td>
                     </tr>
                     <tr>
                         <th class="table-sidebar" scope="row">Bandwidth</th>
-                        <td>Low</td>
-                        <td>High</td>
+                        <td>Telnet requires <b>low</b> bandwidth usage.</td>
+                        <td>SSH requires <b>high</b> bandwidth usage.</td>
                     </tr>
                     <tr>
                         <th class="table-sidebar" scope="row">OS</th>
-                        <td>Linux + Windows</td>
-                        <td>All</td>
+                        <td>Used in <b>Linux and Windows</b> Operating Systems.</td>
+                        <td>Used in <b>all popular</b> Operating Systems.</td>
                     </tr>
                     <tr>
                         <th class="table-sidebar" scope="row">Link</th>
@@ -150,6 +135,7 @@
                 <p>Sources:</p>
                 <a href="https://www.guru99.com/telnet-vs-ssh.html" target="_blank">https://www.guru99.com/telnet-vs-ssh.html</a>
                 <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">https://en.wikipedia.org/wiki/Secure_Shell</a>
+                <a href="https://searchsecurity.techtarget.com/definition/Secure-Shell">https://searchsecurity.techtarget.com/definition/Secure-Shell</a>
             </div>
         </footer>
     </body>
