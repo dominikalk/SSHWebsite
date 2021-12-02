@@ -6,10 +6,16 @@
     margin: 1.5rem 1rem;
 }
 
-.code-snippet > p {
+.code-snippet > p, pre {
     margin: 0.2rem 0;
 }
 
-.code-snippet > p::before{
+.code-snippet > p::before, pre::before{
     content: '> ';
+}
+
+.top-links {
+    display: block;
+    margin: 0.5rem 0;
+    font-weight: bold;
 }

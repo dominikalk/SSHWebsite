@@ -24,20 +24,108 @@
         </header>
         <main>
             <h1>Usage</h1>
-            <h2>Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#Windows" class="top-links">Generating SSH keys on Windows</a>
+            <a href="#LinuxandmacOS" class="top-links">Generating SSH keys on Linux and macOS</a>
+            <p>
+                As SSH uses public-key cryptography to authenticate the remote computer, a private and public key 
+                pair must be generated to be able to authenticate the remote client. These keys are asymmetric. 
+                This negates the need for a passord and this is also known as passwordless SSH.
+            </p>
+            <p>
+                The private key is accesible solely by its owner and is used to authenticate the user. If this key was 
+                known to anyone else, it could be used to inpersonate the initial user. The corresponding public key 
+                can be given to any entity that wants to authenticate the user and it does not matter who has access 
+                to this key as it means nothing without its corresponding private key. To read more about public-key 
+                cryptography/ asymmetric cryptography go 
+                <b><a href="https://en.wikipedia.org/wiki/Public-key_cryptography">here</a></b>.
+            </p>
+            <p>Ahead I will be showing you how to generate SSH keys using the Ed25519 key type.</p>
+
+            <!-- Generating SSH keys on Windows -->
+            <h2 id="Windows">Generating SSH keys on Windows</h2>
+            <h3>Checking for existing SSH keys</h3>
+            <p>
+                Open the command prompt, and run:
+            </p>
             <div class="code-snippet" >
-                <p>git add .</p>
-                <p>git commit -m "message"</p>
-                <p>git push origin master</p>
+                <p>cd %userprofile%/.ssh</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>If there is no such file of directory then no such SSH keys exist and you can go to "Generating an SSH key"</p>
+            <p>To check to see if you have a key already run:</p>
             <div class="code-snippet" >
-                <p>git add .</p>
-                <p>git commit -m "message"</p>
-                <p>git push origin master</p>
+                <p>dir id_*</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>If a key exists already you can use that one. If you would like to generate a new one you may want to back this one up by running:</p>        
+            <div class="code-snippet" >
+                <p>mkdir key_backup</p>
+                <p>copy id_ed25519* key_backup</p>
+            </div>
+            <h3>Generating an SSH key</h3>
+            <div class="code-snippet" >
+                <p>ssh-keygen -t ed25519 -C "your_email@example.com"</p>
+            </div>
+            <p>Press enter to accept the default file location and follow the prompted steps. The following interaction will look like this:</p>
+            <div class="code-snippet" >
+                <p>C:\Users\ASUS>ssh-keygen -t ed25519 -C "your_email@example.com"</p>
+                <p>Generating public/private ed25519 key pair.</p>
+                <p>Enter file in which to save the key (/c/Users/ASUS/.ssh/id_ed25519):</p>
+                <p>Created directory '/c/Users/ASUS/.ssh'.</p>
+                <p>Enter passphrase (empty for no passphrase):</p>
+                <p>Enter same passphrase again:</p>
+                <p>Your identification has been saved in c/Users/ASUS/.ssh/id_ed25519.</p>
+                <p>Your public key has been saved in c/Users/ASUS/.ssh/id_ed25519.pub.</p>
+                <p>The key fingerprint is:</p>
+                <p>SHA256:wvaHYeLtY6+DlvV5sFZgDi3RTAe8R2KY23N78qrGqJE your_email@example.com</p>
+            </div>
+            
+            <!-- Generating SSH keys on Linux and macOS -->
+            <h2 id="LinuxandmacOS">Generating SSH keys on Linux and macOS</h2>
+            <h3>Checking for existing SSH keys</h3>
+            <p>
+                Open the terminal, and run:
+            </p>
+            <div class="code-snippet" >
+                <p>cd ~/.ssh</p>
+            </div>
+            <p>If there is no such file of directory then no such SSH keys exist and you can go to "Generating an SSH key"</p>
+            <p>To check to see if you have a key already run:</p>
+            <div class="code-snippet" >
+                <p>ls id_*</p>
+            </div>
+            <p>If a key exists already you can use that one. If you would like to generate a new one you may want to back this one up by running:</p>        
+            <div class="code-snippet" >
+                <p>mkdir key_backup</p>
+                <p>cp id_ed25519* key_backup</p>
+            </div>
+            <h3>Generating an SSH key</h3>
+            <div class="code-snippet" >
+                <p>ssh-keygen -t ed25519 -C "your_email@example.com"</p>
+            </div>
+            <p>Press enter to accept the default file location and follow the prompted steps. The following interaction will look like this:</p>
+            <div class="code-snippet" >
+                <p>chaiss@C02FP1JWMD6V ~ % ssh-keygen -t ed25519 -C chaiss@email.com</p>
+                <p>Generating public/private ed25519 key pair.</p>
+                <p>Enter file in which to save the key (/Users/chaiss/.ssh/id_ed25519): </p>
+                <p>Enter passphrase (empty for no passphrase): </p>
+                <p>Enter same passphrase again: </p>
+                <p>Your identification has been saved in /Users/chaiss/.ssh/id_ed25519.</p>
+                <p>Your public key has been saved in /Users/chaiss/.ssh/id_ed25519.pub.</p>
+                <p>The key fingerprint is:</p>
+                <p>SHA256:gTVWKbn41z6JgBNu3wYjLC4H6oW5bmhaXyaVABwmEtE chaiss@email.com</p>
+                <p>The key's randomart image is:</p>
+                <pre>+--[ED25519 256]--+</pre>
+                <pre>|==+.    +o..     |</pre>
+                <pre>|.oE.   +o..      |</pre>
+                <pre>|    . ...o       |</pre>
+                <pre>|     .o...       |</pre>
+                <pre>|     oo+S  .     |</pre>
+                <pre>|  + ..B = . .    |</pre>
+                <pre>|.+.+.oo+ * o .   |</pre>
+                <pre>|o++.o+  . + +    |</pre>
+                <pre>|B+ o.    .   .   |</pre>
+                <pre>+----[SHA256]-----+</pre>
+                <p>chaiss@C02FP1JWMD6V ~ %</p>
+            </div>
         </main>
         <!-- Footer -->
         <footer>
@@ -46,6 +134,7 @@
                 <a href="https://www.guru99.com/telnet-vs-ssh.html" target="_blank">https://www.guru99.com/telnet-vs-ssh.html</a>
                 <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">https://en.wikipedia.org/wiki/Secure_Shell</a>
                 <a href="https://searchsecurity.techtarget.com/definition/Secure-Shell">https://searchsecurity.techtarget.com/definition/Secure-Shell</a>
+                <a href="https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html">https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html</a>
             </div>
         </footer>
     </body>
