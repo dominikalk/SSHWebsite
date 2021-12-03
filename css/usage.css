@@ -8,6 +8,7 @@
 
 .code-snippet > p, pre {
     margin: 0.2rem 0;
+    word-wrap: break-word;
 }
 
 .code-snippet > p::before, pre::before{
